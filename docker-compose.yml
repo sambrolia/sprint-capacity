@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine  # Use a lightweight, stable version
+    environment:
+      POSTGRES_USER: sam
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: sprint_capacity
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
